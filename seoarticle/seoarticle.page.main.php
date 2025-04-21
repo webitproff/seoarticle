@@ -55,6 +55,7 @@ $page_title = !empty($pag['page_metatitle']) ? $pag['page_metatitle'] : ($pag['p
 // Очищает HTML-теги, декодирует сущности, убирает переносы строк и лишние пробелы для вывода в одну строку. Используется для og:description и Schema.org description.
 $page_desc = !empty($pag['page_metadesc']) ? $pag['page_metadesc'] : strip_tags(html_entity_decode($pag['page_text'] ?? ''));
 // Удаляет переносы строк, табуляцию и лишние пробелы, заменяя их на одиночный пробел
+$page_desc = preg_replace('/[\'"`]+/', '', $page_desc);
 $page_desc = preg_replace('/\s+/', ' ', trim($page_desc));
 // Обрезает до 160 символов
 $page_desc = cot_string_truncate($page_desc, 160);
