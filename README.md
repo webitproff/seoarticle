@@ -103,20 +103,39 @@ plugins/seoarticle/
    - Open `/themes/CleanCot/page.tpl` and add:
 
      ```html
-     <div class="article-content">{PAGE_TEXT}</div>
-     <p>Author: {PAGE_AUTHOR}</p>
-     <p>Reading time: {PAGE_READ_TIME}</p>
-     <!-- BEGIN: RELATED -->
-     <h3>{PHP.L.seoarticle_related}</h3>
-     <div class="card">
-       <img src="{RELATED_ROW_LINK_MAIN_IMAGE}" alt="{RELATED_ROW_TITLE}" />
-       <div class="card-body">
-         <h5>{RELATED_ROW_TITLE}</h5>
-         <p>{RELATED_ROW_DESC}</p>
-       </div>
-     </div>
-     <!-- END: RELATED -->
+				<!-- IF {PHP|cot_plugin_active('seoarticle')} -->
+				<!-- IF {RELATED_PAGES} -->
+				<div class="related">
+					<!-- BEGIN: MAIN.RELATED_PAGES.RELATED_ROW -->
+					<a href="{RELATED_ROW_URL}">
+						<div class="position-relative overflow-hidden rounded-5 shadow-bottom" style="aspect-ratio: 2 / 1;">
+							<!-- Условие Cotonti: проверка наличия главного изображения через экстраполяцию -->
+							<!-- IF {RELATED_ROW_LINK_MAIN_IMAGE} -->
+								<!-- Главное изображение страницы из Cotonti, адаптивное с обрезкой -->
+								<img src="{RELATED_ROW_LINK_MAIN_IMAGE}" alt="{RELATED_ROW_TITLE}" class="img-fluid object-fit-cover">
+							<!-- Альтернатива: если главного изображения нет -->
+							<!-- ELSE -->
+								<!-- Дефолтное изображение из темы Cotonti -->
+								<img src="{PHP.cfg.themes_dir}/{PHP.cfg.defaulttheme}/img/cotonti-cleancot.webp" alt="{PAGE_TITLE}" class="img-fluid object-fit-cover">
+							<!-- Конец условия изображения -->
+							<!-- ENDIF -->
+						</div>
+						<h3 class="h5 mb-0">{RELATED_ROW_TITLE}</h3>
+						<p>{RELATED_ROW_DESC}</p>
+					</a>
+					<!-- END: MAIN.RELATED_PAGES.RELATED_ROW -->
+				</div>
+				<!-- ENDIF -->
+				<!-- ENDIF -->
      ```
+and
+
+```
+<!-- IF {PHP|cot_plugin_active('seoarticle')} -->
+  {PAGE_READ_TIME}
+<!-- ENDIF -->
+```
+
 
 6. **Clear Cache**:
 
@@ -298,20 +317,38 @@ plugins/seoarticle/
    - Откройте `/themes/CleanCot/page.tpl` и добавьте:
 
      ```html
-     <div class="article-content">{PAGE_TEXT}</div>
-     <p>Автор: {PAGE_AUTHOR}</p>
-     <p>Время чтения: {PAGE_READ_TIME}</p>
-     <!-- BEGIN: RELATED -->
-     <h3>{PHP.L.seoarticle_related}</h3>
-     <div class="card">
-       <img src="{RELATED_ROW_LINK_MAIN_IMAGE}" alt="{RELATED_ROW_TITLE}" />
-       <div class="card-body">
-         <h5>{RELATED_ROW_TITLE}</h5>
-         <p>{RELATED_ROW_DESC}</p>
-       </div>
-     </div>
-     <!-- END: RELATED -->
+				<!-- IF {PHP|cot_plugin_active('seoarticle')} -->
+				<!-- IF {RELATED_PAGES} -->
+				<div class="related">
+					<!-- BEGIN: MAIN.RELATED_PAGES.RELATED_ROW -->
+					<a href="{RELATED_ROW_URL}">
+						<div class="position-relative overflow-hidden rounded-5 shadow-bottom" style="aspect-ratio: 2 / 1;">
+							<!-- Условие Cotonti: проверка наличия главного изображения через экстраполяцию -->
+							<!-- IF {RELATED_ROW_LINK_MAIN_IMAGE} -->
+								<!-- Главное изображение страницы из Cotonti, адаптивное с обрезкой -->
+								<img src="{RELATED_ROW_LINK_MAIN_IMAGE}" alt="{RELATED_ROW_TITLE}" class="img-fluid object-fit-cover">
+							<!-- Альтернатива: если главного изображения нет -->
+							<!-- ELSE -->
+								<!-- Дефолтное изображение из темы Cotonti -->
+								<img src="{PHP.cfg.themes_dir}/{PHP.cfg.defaulttheme}/img/cotonti-cleancot.webp" alt="{PAGE_TITLE}" class="img-fluid object-fit-cover">
+							<!-- Конец условия изображения -->
+							<!-- ENDIF -->
+						</div>
+						<h3 class="h5 mb-0">{RELATED_ROW_TITLE}</h3>
+						<p>{RELATED_ROW_DESC}</p>
+					</a>
+					<!-- END: MAIN.RELATED_PAGES.RELATED_ROW -->
+				</div>
+				<!-- ENDIF -->
+				<!-- ENDIF -->
+  
      ```
+     и в тело статьи:
+```
+<!-- IF {PHP|cot_plugin_active('seoarticle')} -->
+  {PAGE_READ_TIME}
+<!-- ENDIF -->
+```
 
 6. **Очистите кэш**:
 
