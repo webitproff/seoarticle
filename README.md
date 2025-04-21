@@ -93,11 +93,14 @@ plugins/seoarticle/
 
 5. **Update Templates**:
 
-   - Open `/themes/CleanCot/header.tpl` and ensure it includes:
+   - Open `/themes/cleancot/header.tpl` and ensure it includes:
 
      ```html
      <meta name="description" content="{HEADER_META_DESCRIPTION}" />
      <meta name="keywords" content="{HEADER_META_KEYWORDS}" />
+     ```
+     also add the code below if it is not in this template:
+     ```
      <!-- IF {PHP.out.meta} -->{PHP.out.meta}<!-- ENDIF -->
      ```
    - Open `/themes/cleancot/page.tpl` ([download theme](https://github.com/webitproff/cot-CleanCot)) and add:
@@ -322,13 +325,17 @@ plugins/seoarticle/
 
 5. **Обновите шаблоны**:
 
-   - Откройте `/themes/CleanCot/header.tpl` и убедитесь, что он содержит:
+   - Откройте `/themes/cleancot/header.tpl` и убедитесь, что он содержит:
 
      ```html
      <meta name="description" content="{HEADER_META_DESCRIPTION}" />
      <meta name="keywords" content="{HEADER_META_KEYWORDS}" />
+     ```
+также добавьте код, если его нет в шаблоне header.tpl:
+     ```
      <!-- IF {PHP.out.meta} -->{PHP.out.meta}<!-- ENDIF -->
      ```
+     
    - Откройте `/themes/cleancot/page.tpl` ([скачатть тему](https://github.com/webitproff/cot-CleanCot)) и добавьте:
 
      ```html
