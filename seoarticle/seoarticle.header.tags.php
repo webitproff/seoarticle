@@ -26,7 +26,8 @@ require_once cot_incfile('seoarticle', 'plug');
 // Задаёт описание: берёт $pag['page_metadesc'] (поле page_metadesc, обрезает до 160 символов) или очищенный текст из $pag['page_text'] (поле page_text).
 // Очищает HTML-теги, декодирует сущности, убирает переносы строк и лишние пробелы для вывода в одну строку.
 $page_desc = !empty($pag['page_metadesc']) ? $pag['page_metadesc'] : strip_tags(html_entity_decode($pag['page_text'] ?? ''));
-// Удаляет переносы строк, табуляцию и лишние пробелы, заменяя их на одиночный пробел
+// Удаляет кавычки (" ` '), переносы строк, табуляцию и лишние пробелы, заменяя их на одиночный пробел
+$page_desc = preg_replace('/[\'"`]+/', '', $page_desc);
 $page_desc = preg_replace('/\s+/', ' ', trim($page_desc));
 // Обрезает до 160 символов
 $page_desc = cot_string_truncate($page_desc, 160);
