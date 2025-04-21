@@ -1,6 +1,6 @@
 # SeoArticle Plugin for Cotonti
 
-The **SeoArticle** plugin enhances the SEO capabilities of the Cotonti CMF's Pages module by adding meta tags, Open Graph, Twitter Card, Schema.org structured data, keyword extraction, reading time estimation, and related articles functionality.
+The **SeoArticle** plugin enhances the SEO capabilities of the [Cotonti CMF's](https://github.com/Cotonti/Cotonti) Pages module by adding meta tags, Open Graph, Twitter Card, Schema.org structured data, keyword extraction, reading time estimation, and related articles functionality.
 
 ## Tested
 Cotonti CMF v.0.9.26 beta on PHP v.8.2.25
