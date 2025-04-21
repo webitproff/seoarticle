@@ -100,7 +100,7 @@ plugins/seoarticle/
      <meta name="keywords" content="{HEADER_META_KEYWORDS}" />
      <!-- IF {PHP.out.meta} -->{PHP.out.meta}<!-- ENDIF -->
      ```
-   - Open `/themes/CleanCot/page.tpl` and add:
+   - Open `/themes/cleancot/page.tpl` ([download theme](https://github.com/webitproff)) and add:
 
      ```html
 				<!-- IF {PHP|cot_plugin_active('seoarticle')} -->
@@ -314,7 +314,7 @@ plugins/seoarticle/
      <meta name="keywords" content="{HEADER_META_KEYWORDS}" />
      <!-- IF {PHP.out.meta} -->{PHP.out.meta}<!-- ENDIF -->
      ```
-   - Откройте `/themes/CleanCot/page.tpl` и добавьте:
+   - Откройте `/themes/cleancot/page.tpl` ([скачатть тему](https://github.com/webitproff)) и добавьте:
 
      ```html
 				<!-- IF {PHP|cot_plugin_active('seoarticle')} -->
