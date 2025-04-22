@@ -218,8 +218,8 @@ webitproff 22 April 2025
 2. **[Export to Excel via PhpSpreadsheet](https://github.com/webitproff/cot-excel_export) for CMF Cotonti**
    Exporting Articles to Excel from the Database in Cotonti via PhpSpreadsheet.Composer is not required for installation.
    
-3. **[Export to Excel via PhpSpreadsheet](https://github.com/webitproff/cot-excel_export) for CMF Cotonti**
-   Exporting Articles to Excel from the Database in Cotonti via PhpSpreadsheet.Composer is not required for installation.
+3. **[Import from Excel via PhpSpreadsheet](https://github.com/webitproff/cot-excelimport-PhpSpreadsheet_No-Composer) for CMF Cotonti**
+  The plugin for importing articles from Excel for all Cotonti-based websites.Composer is not required for installation.
    
 4. **[The CleanCot theme for CMF Cotonti](https://github.com/webitproff/cot-CleanCot)**
    Modern Bootstrap theme on v.5.3.3 for Cotonti Siena v.0.9.26 without outdated (legacy) mode. Only relevant tags!
